@@ -11,7 +11,7 @@ public class PersonalAccountPage {
     private ElementsCollection cards = $$(".list__item div");
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
-    private final String NumberFinish = ", баланс: ";
+    private final String numberFinish = ", баланс: ";
     private final SelenideElement personalAccountField = $("[data-test-id='dashboard']");
 
     public PersonalAccountPage() {
@@ -44,7 +44,7 @@ public class PersonalAccountPage {
 
     public String extractNumberCard(String text) {
         var start = 0;
-        var finish = text.indexOf(NumberFinish);
+        var finish = text.indexOf(numberFinish);
         var value = text.substring(start, finish);
         return value.trim();
     }
